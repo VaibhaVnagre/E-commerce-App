@@ -1,0 +1,29 @@
+.img {
+   height: 50px;
+   padding: 10px;
+   left: 0px;
+}
+
+.title {
+    text-size-adjust: 5px;
+    left: 1px;
+}
+
+.price {
+    padding-left: 47px;
+    
+}
+
+.quantity {
+    position:initial;
+    padding-left: 95px;
+    
+   
+}
+
+.Removebtn {
+    background-color:orange;
+    margin-left: 20px;
+    
+}
+
