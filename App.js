@@ -4,6 +4,7 @@ import './App.css';
 import Header from './Component/Header/Header';
 import Product from './Component/Items/Product';
 import Cart from './Layout/Cart';
+import CartProvider from './Store/CartProvider';
 
 
 
@@ -21,16 +22,21 @@ function App() {
   };
   
   return (
-    <div className="App">
-    
+   
+      <div className='App' >
+
+     <CartProvider>
+      
     {cartdata && <Cart onClose={closedataHandeler}/>}
 
     <Header onshowCart={showcartHandeler}/>
    
     <Product/>
-  
+
+    </CartProvider>
 
     </div>
+   
   );
 }
 

@@ -1,29 +1,30 @@
 .img {
    height: 50px;
    padding: 10px;
-   left: 0px;
+   margin-left: 5px;
 }
 
 .title {
     text-size-adjust: 5px;
-    left: 1px;
+    margin-left: 10px;
 }
 
 .price {
-    padding-left: 47px;
+ 
+    margin-left: 3rem;
     
 }
 
 .quantity {
-    position:initial;
-    padding-left: 95px;
+    
+    padding-left: 102px;
+   
     
    
 }
 
 .Removebtn {
     background-color:orange;
-    margin-left: 20px;
-    
+    margin-left: 15px;
 }
 

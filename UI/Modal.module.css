@@ -1,4 +1,4 @@
-.backdrop {
+/* .backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -6,34 +6,42 @@
   height: 100vh;
   z-index: 20;
   background-color: transparent;
-}
+} */
 
 .modal {
   position: fixed;
   top: 7vh;
   right: 0%;
   width: 40%;
-  height: 90%;
+  height: 100%;
   background-color: white;
   padding: 1rem;
-  border-radius: 14px;
+  border-style:outset;
+  border-color: brown;
+  border-width: 1px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 30;
   animation: slide-down 300ms ease-out forwards;
 }
 .item {
-  padding: 25px;
+  margin-left: 1rem;
   font-weight: bold;
+  
+  
 }
 
 .price {
-  margin-left: 4rem;
+  margin-left: 7.5rem;
   font-weight: bold;
+  
+  
 }
 
 .quantity {
-  margin-left: 4rem;
+  margin-left: 5rem;
   font-weight: bold;
+  
+  
 }
 
 .heading {
@@ -48,4 +56,8 @@
 .crossBtn {
   margin-left: 23rem;
   border-radius: 3px;
+}
+
+.underline {
+  text-decoration: overline;
 }

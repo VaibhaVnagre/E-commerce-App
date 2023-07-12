@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
+import React, { useContext } from "react";
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 import classes from "./Cart.module.css";
+import CartContext from "../Store/Cart-Context";
 
 
 const cartElements = [
@@ -47,16 +48,26 @@ const cartElements = [
 ];
 
 const Cart = (props) => {
+
+const cartctx = useContext(CartContext)
+let totalAmount = 0
+
+cartctx.items.forEach ((items)=>{
+     totalAmount = totalAmount + items.price;
+})
+
   const cartItem = (
     <div>
-      {cartElements.map((val) => {
+      {cartctx.items.map((val) => {
         return (
           <CartItem
-            key={val.id}
+            key={Math.random()}
+            _id = {val._id}
             image={val.imageUrl}
             title={val.title}
             price={val.price}
             quantity={val.quantity}
+            id = {Math.random()}
           />
         );
       })}
@@ -71,7 +82,7 @@ const Cart = (props) => {
 
       <div className={classes.ammount}>
         <span className={classes.total}>Total Ammount :-</span>
-        <span> $ 36.84</span>
+        <span>{totalAmount}</span>
       </div>
 
       <button className={classes.purchaseBtn}>Purchase</button>
