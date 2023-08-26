@@ -1,14 +1,18 @@
 import React, { useState } from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {Switch, Route, Redirect} from 'react-router-dom'
 import "./App.css";
 import Header from "./Component/Header/Header";
 import Product from "./Component/Items/Product";
 import Cart from "./Layout/Cart";
 import CartProvider from "./Store/CartProvider";
 import About from "./Pages/About";
-import Rootleout from "./UI/NavBar/Rootleout";
 import Home2 from "./Pages/Home";
 import Errorpage from "./Pages/Error";
+import ContactUs from "./Pages/ContactUs";
+import Form from "./Pages/Form";
+import ProductDetail from "./Pages/ProductDetail";
+
+
 
 
 
@@ -27,15 +31,7 @@ import Errorpage from "./Pages/Error";
 
 function App() {
 
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <Rootleout/>,
-  //     children: [
-  //       { path: "/Aboutpage", element: <About /> },
-  //     ]
-  //   },
-  // ]);
+ 
 
   const [cartdata, setCartdata] = useState(false);
 
@@ -49,15 +45,33 @@ function App() {
 
   return (
     <div className="App">
-      
-      {/* <RouterProvider router={router} /> */}
 
       <CartProvider>
+     
+      <Header onshowCart={showcartHandeler} />
+        
+        <Switch>
+
+          <Route path='/' exact>
+
+          <Redirect to='/Home' />
+
+          </Route>
+
+      <Route path="/Aboutpage" component={About} exact/>
+
+      <Route path='/contact' component={ContactUs}/>
+
         {cartdata && <Cart onClose={closedataHandeler} />}
 
-        <Header onshowCart={showcartHandeler} />
+        <Route path='/Home' component={Product} exact/>
 
-        <Product />
+        <Route path ='/back' component ={Product}/>
+
+        <Route path = '/products/:product_id' component={ProductDetail} />
+
+        </Switch>
+
       </CartProvider>
     </div>
   );

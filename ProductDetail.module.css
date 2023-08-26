@@ -1,0 +1,34 @@
+.sections {
+    display: flex;
+    justify-content: center;
+   margin-top: 60px; 
+  }
+  .details {
+    padding: 20px 90px;
+  }
+  .img {
+    transition: transform 0.2s;
+    margin-top: 70px;
+  }
+  .img:hover {
+    transform: scale(1.1);
+  }
+  .price {
+    color: #00adb5;
+    font-size: 20px;
+    border: 2px solid #00adb5;
+    padding: 5px 10px;
+    background-color: #eeeeee;
+    display: block;
+  }
+  .rating {
+    border-radius: 20px;
+    padding: 8px 16px;
+    background-color: #00adb5;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  .reviews {
+    text-align: center; 
+    margin-top: 7rem;
+  }
